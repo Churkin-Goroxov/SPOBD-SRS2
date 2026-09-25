@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Результат - RateMyDay{% endblock %}
+
+{% block content %}
+
+<section class="result-card">
+
+    <p class="small-title">YOUR RESULT</p>
+
+    {% if name %}
+        <h2>{{ name }}, твой результат</h2>
+    {% else %}
+        <h2>Твой результат</h2>
+    {% endif %}
+
+
+    <div class="score">
+        {{ score }}<span>/100</span>
+    </div>
+
+
+    <div class="score-line">
+
+        <div class="score-progress"
+             style="width: {{ score }}%;">
+        </div>
+
+    </div>
+
+
+    <h3>
+        {{ message }}
+    </h3>
+
+
+    {% if score >= 85 %}
+
+        <p>
+            Ты хорошо выстроил свой день.
+            Можно продолжать в том же духе.
+        </p>
+
+    {% elif score >= 70 %}
+
+        <p>
+            День получился достаточно продуктивным.
+        </p>
+
+    {% elif score >= 50 %}
+
+        <p>
+            Результат средний.
+            Обрати внимание на сон и отдых.
+        </p>
+
+    {% else %}
+
+        <p>
+            Возможно, сегодня организму нужно
+            немного больше отдыха.
+        </p>
+
+    {% endif %}
+
+
+    <a class="button" href="{{ url_for('rate') }}">
+        Оценить ещё раз
+    </a>
+
+</section>
+
+{% endblock %}

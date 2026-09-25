@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Главная - RateMyDay{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <p class="small-title">RATE YOUR DAY</p>
+
+        <h2>
+            Как прошёл<br>
+            твой день?
+        </h2>
+
+        <p>
+            Оцени свой день по нескольким простым параметрам
+            и узнай, насколько продуктивным он получился.
+        </p>
+
+        <a class="button" href="{{ url_for('rate') }}">
+            Оценить свой день
+        </a>
+
+    </div>
+
+
+    <div class="hero-info">
+
+        <div class="info-number">01</div>
+
+        <p>Заполни небольшую форму</p>
+
+        <div class="info-line"></div>
+
+        <div class="info-number">02</div>
+
+        <p>Получи результат от 0 до 100</p>
+
+    </div>
+
+</section>
+
+
+<section class="parameters">
+
+    <h3>Что учитывается?</h3>
+
+    <div class="parameter-list">
+
+        <div class="parameter">
+            <span>01</span>
+            <strong>Сон</strong>
+            <p>Количество часов сна</p>
+        </div>
+
+        <div class="parameter">
+            <span>02</span>
+            <strong>Работа</strong>
+            <p>Время работы или учёбы</p>
+        </div>
+
+        <div class="parameter">
+            <span>03</span>
+            <strong>Настроение</strong>
+            <p>Оценка от 1 до 10</p>
+        </div>
+
+        <div class="parameter">
+            <span>04</span>
+            <strong>Активность</strong>
+            <p>Была ли физическая нагрузка</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
